@@ -1,9 +1,26 @@
 Using cross-platform rust std functions in c
-
 std::process::id example
 
+```
 rust -> llvm ir
 c -> llvm ir
 ir + ir -> merged ir
-
 merged ir -> executable
+```
+
+# Linux
+```
+apome:~/.../process_id$ bash linux.sh 
+apome:~/.../process_id$ ./my_app 
+9922
+```
+
+# Windows
+```
+apome:~/.../process_id$ bash win.sh 
+apome:~/.../process_id$ wine my_app.exe 
+wine: Call from 00006FFFFF483F07 to unimplemented function sechost.dll.SubscribeServiceChangeNotifications, aborting
+0084:err:seh:call_stack_handlers invalid frame 000000C000051B40 (00007207CDF02000-00007207CE100000)
+0084:err:seh:NtRaiseException Exception frame is not in stack limits => unable to dispatch exception.
+312
+```
