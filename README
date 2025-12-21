@@ -1,0 +1,9 @@
+Using cross-platform rust std functions in c
+
+std::process::id example
+
+rust -> llvm ir
+c -> llvm ir
+ir + ir -> merged ir
+
+merged ir -> executable
