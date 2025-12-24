@@ -14,6 +14,4 @@ llvm-link temp/c_main.ll temp/rd_main.ll -S -o temp/merged.ll
 
 # 4. Final Compile & Link
 # Note: We include common Windows libs required by the Rust runtime
-clang temp/merged.ll -o my_app.exe \
-    --target=x86_64-pc-windows-gnu \
-    -lntdll -lsynchronization -luser32 -lkernel32 -lws2_32 -lbcrypt
+clang temp/merged.ll -o my_app.exe --target=x86_64-pc-windows-gnu -lntdll -lsynchronization -luser32

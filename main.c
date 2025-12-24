@@ -1,8 +1,8 @@
 // main.c
 #include <stdio.h>
-int my_process_id(void); // Declare the function exists elsewhere
+int std_process_id();
 
 int main() {
-    printf("%d", my_process_id());
+    printf("%d", std_process_id());
     return 0;
 }

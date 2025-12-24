@@ -14,6 +14,4 @@ clang -S -emit-llvm main.c -o temp/c_main.ll --target=x86_64-unknown-linux-gnu
 llvm-link temp/c_main.ll temp/rd_main.ll -S -o temp/merged.ll
 
 # 4. Final Compile & Link
-clang temp/merged.ll -o my_app \
-    --target=x86_64-unknown-linux-gnu \
-    -lpthread -ldl -lm -lrt
+clang temp/merged.ll -o my_app --target=x86_64-unknown-linux-gnu
