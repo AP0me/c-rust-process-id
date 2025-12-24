@@ -1,6 +1,6 @@
 // main.c
 #include <stdio.h>
-int std_process_id();
+#include "rust_std.h"
 
 int main() {
     printf("%d", std_process_id());

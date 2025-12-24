@@ -6,6 +6,8 @@ rustc +1.81 --emit=llvm-ir --crate-type=staticlib \
     -C lto=fat -C embed-bitcode=yes \
     main.rs -o temp/rd_main.ll --target=x86_64-unknown-linux-gnu
 
+cbindgen --lang c main.rs -o rust_std.h
+
 # 2. C to LLVM-IR
 # Ensure you have the linux headers available if cross-compiling
 clang -S -emit-llvm main.c -o temp/c_main.ll --target=x86_64-unknown-linux-gnu
